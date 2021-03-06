@@ -48,8 +48,8 @@ class Car:
 
 # Create 2 Instancs 
 
-instance1 = Car("Ford","Chrysler","Tesla")
-instance2 = Car("Ranger", "Dodge", "Toyota")
+instance1 = Car("Ford","Ranger","Red")
+instance2 = Car("Pontiac", "Grand Am", "Blue")
 
 
 # Print Out
@@ -155,6 +155,67 @@ print(ins3)
 #   - add a property to your Toyota class
 #   - add a property to your Car class and "fill it in" for your Toyota class
 #
+
+# Class Car above in # 1 
+
+class Car:   
+
+ # initial roperties - Given: Make, Model, Color
+ # Remove color property in Car Class to Toyota Class
+ # Add new property to Car Class and fill it in - weight
+    
+    def __init__(self, make, model, weight):
+        self.make = make
+        self.model = model
+        self.weight = weight
+        
+    def __str__(self):
+        return f"{self.make} {self.model} {self.weight}"
+
+# Method is called given: drive 
+    def drive(self):
+        return ('Vroom Vroom')
+        # print("Vroom Vroom")
+  
+
+# Create 2 Instances -  Fill in weight
+
+instance1 = Car("Ford","Ranger","1000 lbs")
+# instance2 = Car("Pontiac", "Grand Am", "small")
+
+
+# # Print Out
+# print(instance1.drive())
+# print(instance2.drive())
+# print(instance1)
+# print(instance2)
+
+# Create a Toyota Class (extend to Car Class)
+class Toyota(Car):
+    
+    def __init__(self, model, weight, color, engine, make='Toyota'):
+        
+        # The property MAKE is set to Toyota
+        super().__init__(make, model, weight)   	
+        self.color = color
+        self.engine = engine
+      
+    def __str__(self):
+        return f"{self.make} {self.model} {self.color} {self.weight}"        
+      
+# Eliminate Drive Methode in Toyota Class
+# Add a Drive Method to your Toyota Class
+    # def drive(self):
+    #     return("Toyota Is a Nice Vehicle")
+        
+ # make 1 Instance but MAKE is always Toyota
+
+instanceOne = Toyota("MAKE is alway TOYOTA","Minivan","Red","1000 lbs")
+
+# Print out 
+print(instanceOne.drive())
+print(instanceOne)
+
 
 #
 # Prompt 5: You Do

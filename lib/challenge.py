@@ -1,4 +1,4 @@
-#
+
 # Instructions:
 # Work through the following prompts. Prompts marked with "We Do", we will work
 # on together, as a class; prompts marked with "You Do", you will be given time
@@ -25,6 +25,44 @@
 # Once you create your class definition create two instances.
 #
 
+
+# define a class 
+
+class Car:   
+
+ # properties - Given: Make, Model, Color
+    
+    def __init__(self, make, model, color):
+        self.make = make
+        self.model = model
+        self.color = color
+        
+    def __str__(self):
+        return f"{self.make} {self.model} {self.color}"
+
+# Method is called given: drive 
+    def drive(self):
+        return ('Vroom Vroom - Instance 1')
+        return ('Vroom Vroom - Instance 2')
+        # print("Vroom Vroom")
+  
+
+# Create 2 Instancs 
+
+instance1 = Car("Ford","Chrysler","Tesla")
+instance2 = Car("Ranger", "Dodge", "Toyota")
+
+
+# Print 
+# print(instance1.drive())
+# print(instance2.drive())
+print(instance1.drive())
+print(instance2.drive())
+print(instance1)
+print(instance2)
+
+     
+
 #
 # Prompt 2: We Do
 #
@@ -37,6 +75,27 @@
 # Make an instance of your Toyota class.
 #
 
+# Create a Toyota Class (extend to Car Class)
+class Toyota(Car):
+    
+    def __init__(self, make, model, color):
+        # The property MAKE is set to Toyota
+        super().__init__("Toyota", model, color)	
+      
+
+# Add a Drive Method to your Toyota Class
+    def drive(self):
+        print("Toyota Is a Nice Vehicle")
+        
+ # make 1 Instance but MAKE is always Toyota
+
+inst = Toyota("MAKE is alway TOYOTA","Minivan","Car")
+
+# print(inst.drive)
+print(inst)
+
+
+
 #
 # Prompt 3: You Do
 #
@@ -45,6 +104,44 @@
 #
 # After you've defined your class, create 3 instances.
 #
+
+
+# define a class 
+
+class Animal:   
+
+ # properties - color, age, breed
+    
+    def __init__(self, age, breed, color):
+        self.age = age
+        self.breed = breed
+        self.color = color
+        
+    def __str__(self):
+        return f"{self.age} {self.breed} {self.color}"
+
+# Method is called drive 
+    def style(self):
+        print("Love that Animal")
+  
+    def owner(self):
+        print("Great Owners")
+        
+  # make 2 Instancs 
+
+ins1 = Animal("giraffe", "dog", "cat")
+ins2 = Animal("Rox","Rat", "cow")
+ins3 = Animal("Goose", "Mouse", "cow")
+
+
+# Print 
+# print(instance1.drive())
+# print(instance2.drive())
+print(str(ins1))
+print(str(ins2))
+print(str(ins3))
+
+
 
 # Prompt 4: You Do
 #

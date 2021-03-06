@@ -42,8 +42,7 @@ class Car:
 
 # Method is called given: drive 
     def drive(self):
-        return ('Vroom Vroom - Instance 1')
-        return ('Vroom Vroom - Instance 2')
+        return ('Vroom Vroom')
         # print("Vroom Vroom")
   
 
@@ -53,9 +52,7 @@ instance1 = Car("Ford","Chrysler","Tesla")
 instance2 = Car("Ranger", "Dodge", "Toyota")
 
 
-# Print 
-# print(instance1.drive())
-# print(instance2.drive())
+# Print Out
 print(instance1.drive())
 print(instance2.drive())
 print(instance1)
@@ -79,20 +76,22 @@ print(instance2)
 class Toyota(Car):
     
     def __init__(self, make, model, color):
+        
         # The property MAKE is set to Toyota
         super().__init__("Toyota", model, color)	
       
 
 # Add a Drive Method to your Toyota Class
     def drive(self):
-        print("Toyota Is a Nice Vehicle")
+        return("Toyota Is a Nice Vehicle")
         
  # make 1 Instance but MAKE is always Toyota
 
-inst = Toyota("MAKE is alway TOYOTA","Minivan","Car")
+instanceOne = Toyota("MAKE is alway TOYOTA","Minivan","Car")
 
-# print(inst.drive)
-print(inst)
+# Print out 
+print(instanceOne.drive())
+print(instanceOne)
 
 
 
@@ -108,38 +107,41 @@ print(inst)
 
 # define a class 
 
-class Animal:   
+class Dog:   
 
- # properties - color, age, breed
+ # properties Need 3 Attributes- breed, color, size
     
-    def __init__(self, age, breed, color):
-        self.age = age
+    def __init__(self, breed, color, size ):
         self.breed = breed
         self.color = color
+        self.size = size
         
     def __str__(self):
-        return f"{self.age} {self.breed} {self.color}"
+        return f"{self.breed} {self.color} {self.size}"
 
-# Method is called drive 
+# Method 1is called style
     def style(self):
-        print("Love that Animal")
+       return("I love small Poodles")
   
+    # Method 2 is called owner
     def owner(self):
-        print("Great Owners")
+        print("Great Owners love Dogs")
         
   # make 2 Instancs 
 
-ins1 = Animal("giraffe", "dog", "cat")
-ins2 = Animal("Rox","Rat", "cow")
-ins3 = Animal("Goose", "Mouse", "cow")
+ins1 = Dog ("poodles","german Shephard", "bulldog")
+ins2 = Dog ("retriever", "Lab","Husky")
+ins3 = Dog ("Greyhound","Dane","Pomerian")
 
 
-# Print 
-# print(instance1.drive())
-# print(instance2.drive())
-print(str(ins1))
-print(str(ins2))
-print(str(ins3))
+# Print Methods Comments
+print(ins1.style())
+print(ins2.owner())
+
+# Print Instances 
+print(ins1)
+print(ins2)
+print(ins3)
 
 
 

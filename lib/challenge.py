@@ -333,41 +333,35 @@ class Card:
         self.rank = rank
         self.score = score 
 
-    def __str__(self):
-        return f'{self.suit} {self.rank} {self.score}'
-
 
 # Create Deck Class - properties length, cards, draw
 
-class Deck:
-    def __init__(self, length):
-        self.length = length
-        self.cards = []
-        self.create_deck()
 
-    def __str__(self):
-        return f'{len(self.cards)}'
+class Deck:
+    def __init__(self):
+        self.length = 52
+        self.cards = []
+    
 
 
 #   - suit (hearts, spades, clubs, diamonds)
 #   - rank (Ace, 2, 3, 4, .. Jack, King, Queen)
 #   - score (1, 2, 3, 4, ... 11, 12, 13)   
 
-    def create_deck(self):
-        suits = ['hearts', 'diamonds', 'spades', 'clubs']
-        ranks = ['Ace','2','3','4','5','6','7','8','9','10','Jack','Queen','King']
-        for suit in suits:
-            for i in range(1,14):
-                self.cards.append(Card(suit,ranks[i-1],i))
+        self.suits = ['hearts', 'diamonds', 'spades', 'clubs']
+        self.ranks = ['Ace','2','3','4','5','6','7','8','9','10','Jack','Queen','King']
+        self.scores = [1,2,3,4,5,6,7,8,9,10,11,12,13]
+        
+        for suit in self.suits:
+            for index,rank in enumerate(self.ranks):
+                new_card = Card(suit,rank, self.scores[index])
+                self.cards.append(new_car)
+                
+deck = Deck()
 
-        random.shuffle(self.cards)
 
-#   fill in the cards array with 52 instances of your Card class
-
-deck = Deck(52)
-card = Card('hearts','ace','1')
 
 # # Print Methods Comments
-print(deck)
-print(card)
+print(card.__dict__ for card in deck.cards]
+
 

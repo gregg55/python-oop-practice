@@ -193,28 +193,30 @@ instance1 = Car("Ford","Ranger","1000 lbs")
 # Create a Toyota Class (extend to Car Class)
 class Toyota(Car):
     
-    def __init__(self, model, weight, color, engine, make='Toyota'):
+    def __init__(self, model, weight, color, make='Toyota'):
         
         # The property MAKE is set to Toyota
         super().__init__(make, model, weight)   	
         self.color = color
-        self.engine = engine
+        # self.engine = engine
       
     def __str__(self):
         return f"{self.make} {self.model} {self.color} {self.weight}"        
       
 # Eliminate Drive Methode in Toyota Class
-# Add a Drive Method to your Toyota Class
+# Add a Drive Method to your Toyota Class - comment out
     # def drive(self):
     #     return("Toyota Is a Nice Vehicle")
         
  # make 1 Instance but MAKE is always Toyota
 
 instanceOne = Toyota("MAKE is alway TOYOTA","Minivan","Red","1000 lbs")
+# addEngine =Toyota("MAKE is alway TOYOTA","Minivan","Red","1000 lbs","6L")
 
 # Print out 
 print(instanceOne.drive())
 print(instanceOne)
+# print(addEngine)
 
 
 #
@@ -232,6 +234,68 @@ print(instanceOne)
 # Create an instance of your animal class (the one that extends the Animal
 # class).
 #
+
+
+class Dog:   
+
+ # properties Need 3 Attributes- breed, color, size
+    
+    def __init__(self, breed, color, size ):
+        self.breed = breed
+        self.color = color
+        self.size = size
+        
+    def __str__(self):
+        return f"{self.breed} {self.color} {self.size}"
+
+# Method 1is called style
+    def style(self):
+       return("I love small Poodles")
+  
+    # Method 2 is called owner
+    def owner(self):
+        print("Great Owners love Dogs")
+        
+  # make 2 Instancs 
+
+# ins1 = Dog ("poodles","german Shephard", "bulldog")
+# ins2 = Dog ("retriever", "Lab","Husky")
+# ins3 = Dog ("Greyhound","Dane","Pomerian")
+
+
+# Extend Class Dog with Class Animal and add Group
+class Animal(Dog):
+    
+    # Add Group properties 
+    def __init__(self, breed, color, size, group):
+        super().__init__(breed, color, size)
+ # Add Group Properties 
+        self.group = group
+
+# Add Group 
+    def __str__(self):
+       return f"{self.breed} {self.color} {self.size} {self.group}"
+
+# Method Eat -  Yum Yum
+
+    def eat(self):
+       return 'Yum Yum'
+   
+# Method Sleep -  'zzzzz'
+    def sleep(self):
+       return 'zzzzz'
+
+# add Instance
+instanceAnimal = Animal("poodles","german Shephard", "bulldog","Reptiles")
+
+# # Print Methods Comments
+print(instanceAnimal.eat())
+print(instanceAnimal.sleep())
+
+# Print Instances 
+print(instanceAnimal)
+
+
 
 #
 # Prompt 6: You Do
@@ -257,3 +321,53 @@ print(instanceOne)
 #
 # Instantiate an instance of your Deck and start drawing random cards!
 #
+
+
+# Create Card Class - properties suit,rank, and score
+
+import random
+
+class Card:
+    def __init__(self, suit, rank, score):
+        self.suit = suit
+        self.rank = rank
+        self.score = score 
+
+    def __str__(self):
+        return f'{self.suit} {self.rank} {self.score}'
+
+
+# Create Deck Class - properties length, cards, draw
+
+class Deck:
+    def __init__(self, length):
+        self.length = length
+        self.cards = []
+        self.create_deck()
+
+    def __str__(self):
+        return f'{len(self.cards)}'
+
+
+#   - suit (hearts, spades, clubs, diamonds)
+#   - rank (Ace, 2, 3, 4, .. Jack, King, Queen)
+#   - score (1, 2, 3, 4, ... 11, 12, 13)   
+
+    def create_deck(self):
+        suits = ['hearts', 'diamonds', 'spades', 'clubs']
+        ranks = ['Ace','2','3','4','5','6','7','8','9','10','Jack','Queen','King']
+        for suit in suits:
+            for i in range(1,14):
+                self.cards.append(Card(suit,ranks[i-1],i))
+
+        random.shuffle(self.cards)
+
+#   fill in the cards array with 52 instances of your Card class
+
+deck = Deck(52)
+card = Card('hearts','ace','1')
+
+# # Print Methods Comments
+print(deck)
+print(card)
+
